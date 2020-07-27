@@ -1,68 +1,57 @@
-
-<?php
-// para inicializar a sessão
-session_start();
-
-?>
-
-<?php
-include 'includes/header.php';
-
-?>
+<?php include_once 'view/dependencias.php'; ?>
 
 
-<h1>Cadastrar Cliente</h1>
 
-<?php
-if (isset($_SESSION['msg'])){
-    echo $_SESSION['msg'];
-    unset($_SESSION['msg']);
-}
+<h2 class="text-center" >
+	Bem-Vindo! <i class="fa fa-door-open"></i>
+</h2><hr>
 
+<form method="POST" action="">
+	
+<div class="container" >
+	<div class="form-row">
+		<h3> Informar itens para abertura do caixa</h3>
+		
+		
+		<div class="col-md-8">
+		<br>	Valor atual: <i class="fa fa-money-check-alt"></i>
+			<input class="form-control" id="disabledInput" type="text" name="vInicial" placeholder="R$ 0,00" disabled="">
 
-?>
+		</div>
+		
 
-<form method="POST" action="processa.php">
+		<div class="col-md-8">
+		<br>
+			Adicionar valor: <i class="fa fa-money-check-alt"></i>
+			
+			<input class="form-control" type="text" name="vAbertura" required id="abert"><br>
+		</div>
 
+	
+		<div class="col-md-6">
+			<br>
+			<button class="btn btn-primary btn-lg">
+				
+				Inserir Valor <i class="fa fa-file-invoice-dollar"></i>
 
-<div class="row" style="margin=50px">
-    <form class="col s12">
-      <div class="row">
+			</button><br><br>
 
-      <div class="row">
-        <div class="input-field col s12">
-        <label>Nome:</label>
-        <input type="text" name="nome" placeholder="Digitar nome completo"><br><br>
-        </div>
-      </div>
+			
 
-        <div class="input-field col s6">
-        <label>RG:</label>
-        <input type="text" name="rg" placeholder="000.000.000-0"><br><br>
+		</div>
 
-        </div>
-        <div class="input-field col s6">
-        <label>CPF:</label>
-        <input type="text" name="cpf" placeholder="000.000.000- 0"><br><br>
-
-        </div>
-      </div>
-    </div>
- 
-
-      <input type="submit" value="Cadastrar">
-    </form>
-
+	</div>
 </div>
 
+</form>
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script> 
 
-
-
-
-
-<?php
-include_once 'includes/footer.php';
-
-?>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#abert").mask("R$ 0000,00");
+		
+	});
+</script>
