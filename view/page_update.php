@@ -37,6 +37,33 @@ $id = $_POST['id'];
 			<input class="form-control" type="text" name="cpf" required id="cpf" value="<?=$client_info['cpf']?>"><br>
 		</div>
 
+		<div class="col-md-6">
+		<label >Tipo</label>
+		<select  name="tipo" id="tipo" class="form-control" required>
+			<option value="" disabled="" selected>Selecione uma opção </option>
+			<option value="Aluno">Aluno</option>
+			<option value="Colaborador">Colaborador</option>
+			<option value="Professor">Professor</option>
+		</select>
+		<br>
+    	</div>
+
+		
+		<div class="col-md-6">
+	
+		<label for="curso">Curso</label>
+		
+		<select  name="curso" class="form-control"> 
+			<option value="" disabled="" selected>Selecione uma opção </option>
+			<option value="Agronegócio- Noturno">Agronegócio- Noturno</option>
+			<option value="Análise e Desenvolvimento de Sistemas- Manhã">Análise e Desenvolvimento de Sistemas- Manhã</option>
+			<option value="Análise e Desenvolvimento de Sistemas- Noturno">Análise e Desenvolvimento de Sistemas- Noturno</option>
+			<option value="Eventos- Noturno">Eventos- Noturno</option>
+			<option value="Gestão Empresarial- Noturno">Gestão Empresarial- Noturno</option>
+			<option value="Produção Agropecuária- Manhã">Produção Agropecuária- Manhã</option>
+			
+		</select >
+    	</div>
 		
 
 		<div class="col-md-6">

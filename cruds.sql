@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21-Jul-2020 às 05:20
+-- Tempo de geração: 26-Ago-2020 às 03:08
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.4.7
 
@@ -44,42 +44,18 @@ CREATE TABLE `cliente` (
   `nome` varchar(200) NOT NULL,
   `rg` varchar(20) NOT NULL,
   `cpf` varchar(20) NOT NULL,
-  `tipo` varchar(200) NOT NULL
+  `tipo` varchar(200) NOT NULL,
+  `curso` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `cliente`
 --
 
-INSERT INTO `cliente` (`id`, `nome`, `rg`, `cpf`, `tipo`) VALUES
-(1, 'teste1', '99.999.999-99', '999.999.999-99', 'Colaborador'),
-(2, 'teste2', '00.000.000-0', '000.000.000-00', 'Aluno'),
-(3, 'teste3', '11.111.111-1', '111.111.111-11', 'Professor'),
-(4, 'Teste4', '33.333.333-3', '333.333.333-33', 'Aluno'),
-(6, 'sol', '55.555.555-5', '555.555.555-55', ''),
-(9, 'Maeve', '55.555.555-5', '444.444.444-44', '');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `curso`
---
-
-CREATE TABLE `curso` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `curso`
---
-
-INSERT INTO `curso` (`id`, `nome`) VALUES
-(1, 'Agronegócio- Noturno'),
-(2, 'Análise e Desenvolvimento de Sistemas- Noturno'),
-(3, 'Gestão Empresarial - Noturno '),
-(4, 'Eventos- Manhã'),
-(5, 'Análise e Desenvolvimento de Sistemas- Manhã');
+INSERT INTO `cliente` (`id`, `nome`, `rg`, `cpf`, `tipo`, `curso`) VALUES
+(1, 'teste1', '99.999.999-90', '999.999.999-90', 'Aluno', 'Produção Agropecuária- Manhã'),
+(3, 'teste3', '11.111.111-1', '111.111.111-11', 'Aluno', 'Eventos- Noturno'),
+(26, 'sara', '55.555.555-5', '444.444.444-44', 'Aluno', 'Análise e Desenvolvimento de Sistemas- Noturno');
 
 -- --------------------------------------------------------
 
@@ -165,12 +141,6 @@ ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `curso`
---
-ALTER TABLE `curso`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Índices para tabela `fechamento`
 --
 ALTER TABLE `fechamento`
@@ -204,13 +174,7 @@ ALTER TABLE `abertura`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT de tabela `curso`
---
-ALTER TABLE `curso`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `fechamento`

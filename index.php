@@ -13,11 +13,7 @@
 		<h3> Informar itens para abertura do caixa</h3>
 		
 		
-		<div class="col-md-8">
-		<br>	Valor atual: <i class="fa fa-money-check-alt"></i>
-			<input class="form-control" id="disabledInput" type="text" name="vInicial" placeholder="R$ 0,00" disabled="">
-
-		</div>
+		
 		
 
 		<div class="col-md-8">

@@ -35,6 +35,9 @@ $manager = new Manager();
 					
 					<th>RG</th>
 					<th>CPF</th>
+
+					<th>TIPO</th>
+					<th>Curso</th>
 					
 					<th colspan="4">AÇÕES</th>
 				</tr>
@@ -46,6 +49,8 @@ $manager = new Manager();
 					<td><?php echo $client['nome']; ?></td>
 					<td><?php echo $client['rg']; ?></td>
 					<td><?php echo $client['cpf']; ?></td>
+					<td><?php echo $client['tipo']; ?></td>
+					<td><?php echo $client['curso']; ?></td>
 
 					
 					
