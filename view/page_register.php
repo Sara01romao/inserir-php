@@ -1,5 +1,6 @@
 <?php include_once 'dependencias.php'; ?>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <h2 class="text-center">
 	Registrar Cliente <i class="fa fa-user-plus"></i>
@@ -25,23 +26,39 @@
 			<input class="form-control" type="text" name="cpf" required id="cpf"><br>
 		</div>
 
+		<script>
+
+		function validarForm() { 
+				var optionSelect = document.getElementById("tipo").value;
+				
+				if(optionSelect =="Aluno" ){ 
+					document.getElementById("curso").disabled = false;
+				}else{
+					document.getElementById("curso").disabled = true;
+					
+				}
+
+				
+
+				
+			}
+
+
+		
+		</script>
+
 		<div class="col-md-6">
 		<label >Tipo</label>
-		<select  name="tipo" id="tipo" class="form-control" required>
+		<select  name="tipo" id="tipo" class="form-control" onchange="validarForm()" required>
 			<option value="" disabled="" selected>Selecione uma opção </option>
-			<option value="Aluno">Aluno</option>
+			<option value="Aluno" >Aluno</option>
 			<option value="Colaborador">Colaborador</option>
 			<option value="Professor">Professor</option>
 		</select>
+		
 		<br>
-    	</div>
-
-		
-		<div class="col-md-6">
-	
 		<label for="curso">Curso</label>
-		
-		<select required name="curso" class="form-control">
+		<select required name="curso" id="curso" class="form-control" disabled >
 			<option value="" disabled="" selected>Selecione uma opção </option>
 			<option value="Agronegócio- Noturno">Agronegócio- Noturno</option>
 			<option value="Análise e Desenvolvimento de Sistemas- Manhã">Análise e Desenvolvimento de Sistemas- Manhã</option>
@@ -51,9 +68,18 @@
 			<option value="Produção Agropecuária- Manhã">Produção Agropecuária- Manhã</option>
 			
 		</select>
+		
+		
     	</div>
 
-		<div class="col-md-4">
+
+		
+		
+		
+
+		
+
+		<div class="col-md-12">
 		<br>
 			<button class="btn btn-primary btn-lg">
 				
@@ -72,6 +98,8 @@
 
 </form>
 
+
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script> 
@@ -81,4 +109,6 @@
 		$("#cpf").mask("000.000.000-00");
 		$("#rg").mask("00.000.000-0");
 	});
+
+	
 </script>
