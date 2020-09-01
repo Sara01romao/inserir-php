@@ -32,8 +32,11 @@
 				var optionSelect = document.getElementById("tipo").value;
 				
 				if(optionSelect =="Aluno" ){ 
+					
 					document.getElementById("curso").disabled = false;
+
 				}else{
+					document.getElementById("curso").value =' ';
 					document.getElementById("curso").disabled = true;
 					
 				}
