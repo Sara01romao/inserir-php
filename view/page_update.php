@@ -8,6 +8,8 @@ $manager = new Manager();
 
 $id = $_POST['id'];
 
+
+
 ?>
 
 <h2 class="text-center">
@@ -37,23 +39,85 @@ $id = $_POST['id'];
 			<input class="form-control" type="text" name="cpf" required id="cpf" value="<?=$client_info['cpf']?>"><br>
 		</div>
 
-		<div class="col-md-6">
+		<!-- <div class="col-md-6">
 		<label >Tipo</label>
-		<select  name="tipo" id="tipo" class="form-control" required>
+		<select  name="tipo" id="tipo" class="form-control" required >
 			<option value="" disabled="" selected>Selecione uma opção </option>
 			<option value="Aluno">Aluno</option>
 			<option value="Colaborador">Colaborador</option>
 			<option value="Professor">Professor</option>
 		</select>
 		<br>
-    	</div>
+    	</div> -->
 
+
+
+	
+
+
+
+		<div class="col-md-6">
+		<label >Tipo</label>
 		
+			<select name="tipo" class="form-control" require>
+				<?php
+					// percorre as lista de níveis, criando um option para cada item;
+					// quando o item for igual ao do cliente, então deixa ele selecionado (para
+					// deixar o item selecionado, é só adicionar o atributo "selected" no option)
+					
+					$listatipo = Array("Aluno", "Colaborador", "Professor");
+					foreach($listatipo as $tipo){
+						// reseta a variável/atributo
+						$selecionado = "";
+						
+						if($tipo == $client_info["tipo"]){
+							$selecionado = "selected";
+						}
+						
+						echo "<option value='{$tipo}' $selecionado>{$tipo}</option>";
+					}
+				?>
+			</select>
+
+		</div> 
+
+
+
+		<div class="col-md-6">
+		<label >Curso</label>
+		
+			<select name="curso" class="form-control" require>
+				<?php
+					// percorre as lista de níveis, criando um option para cada item;
+					// quando o item for igual ao do cliente, então deixa ele selecionado (para
+					// deixar o item selecionado, é só adicionar o atributo "selected" no option)
+					
+					$listacurso = Array("Agronegócio- Noturno", "Análise e Desenvolvimento de Sistemas- Manhã", "Análise e Desenvolvimento de Sistemas- Noturno", "Eventos- Noturno", "Gestão Empresarial- Noturno", "Produção Agropecuária- Manhã"  );
+					foreach($listacurso as $curso){
+						// reseta a variável/atributo
+						$selecionado = "";
+						
+						if($curso == $client_info["curso"]){
+							$selecionado = "selected";
+						}
+						
+						echo "<option value='{$curso}' $selecionado>{$curso}</option>";
+					}
+				?>
+			</select>
+
+		</div> 
+
+
+
+
+
+<!-- 		
 		<div class="col-md-6">
 	
 		<label for="curso">Curso</label>
 		
-		<select  name="curso" class="form-control"> 
+		<select  name="curso" class="form-control" > 
 			<option value="" disabled="" selected>Selecione uma opção </option>
 			<option value="Agronegócio- Noturno">Agronegócio- Noturno</option>
 			<option value="Análise e Desenvolvimento de Sistemas- Manhã">Análise e Desenvolvimento de Sistemas- Manhã</option>
@@ -63,7 +127,7 @@ $id = $_POST['id'];
 			<option value="Produção Agropecuária- Manhã">Produção Agropecuária- Manhã</option>
 			
 		</select >
-    	</div>
+    	</div> -->
 		
 		
 

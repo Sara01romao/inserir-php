@@ -44,6 +44,8 @@ class Manager extends Conexao {
 	 	return $statement->fetchAll();
 	 }
 
+
+	 //atualizar
 	 public function updateClient($cliente, $data, $id) {
 	 	$pdo = parent::get_instance();
 	 	$new_values = "";
