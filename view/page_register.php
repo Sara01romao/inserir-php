@@ -41,14 +41,9 @@
 					
 				}
 
-				
-
-				
 			}
-
-
-		
-		</script>
+			//verificar select option tipo e bloquear cursos
+		</script> 
 
 		<div class="col-md-6">
 		<label >Tipo</label>

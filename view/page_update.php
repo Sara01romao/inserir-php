@@ -50,11 +50,9 @@ $id = $_POST['id'];
 		<br>
     	</div> -->
 
-
+		<script>
 
 	
-
-
 
 		<div class="col-md-6">
 		<label >Tipo</label>
@@ -72,9 +70,13 @@ $id = $_POST['id'];
 						
 						if($tipo == $client_info["tipo"]){
 							$selecionado = "selected";
+							
 						}
-						
+
+			
 						echo "<option value='{$tipo}' $selecionado>{$tipo}</option>";
+
+
 					}
 				?>
 			</select>
@@ -83,10 +85,11 @@ $id = $_POST['id'];
 
 
 
+
 		<div class="col-md-6">
 		<label >Curso</label>
 		
-			<select name="curso" class="form-control" require>
+			<select name="curso" class="form-control" require disabled>
 				<?php
 					// percorre as lista de níveis, criando um option para cada item;
 					// quando o item for igual ao do cliente, então deixa ele selecionado (para
@@ -105,7 +108,7 @@ $id = $_POST['id'];
 					}
 				?>
 			</select>
-
+			<br>
 		</div> 
 
 
@@ -132,7 +135,7 @@ $id = $_POST['id'];
 		
 
 		<div class="col-md-6">
-			
+			<br>
 			<input type="hidden" name="id" value="<?=$client_info['id']?>">
 
 			<?php endforeach; ?>
