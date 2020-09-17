@@ -10,6 +10,7 @@ $id = $_POST['id'];
 
 
 
+
 ?>
 
 <h2 class="text-center">
@@ -59,13 +60,11 @@ $id = $_POST['id'];
 		
 			<select name="tipo" class="form-control" require>
 				<?php
-					// percorre as lista de níveis, criando um option para cada item;
-					// quando o item for igual ao do cliente, então deixa ele selecionado (para
-					// deixar o item selecionado, é só adicionar o atributo "selected" no option)
+					
 					
 					$listatipo = Array("Aluno", "Colaborador", "Professor");
 					foreach($listatipo as $tipo){
-						// reseta a variável/atributo
+					
 						$selecionado = "";
 						
 						if($tipo == $client_info["tipo"]){
@@ -84,9 +83,9 @@ $id = $_POST['id'];
 			
 		</div> 
 
-
-		
+					
 				
+
       
 
 					
@@ -104,13 +103,7 @@ $id = $_POST['id'];
 					// quando o item for igual ao do cliente, então deixa ele selecionado (para
 					// deixar o item selecionado, é só adicionar o atributo "selected" no option)
 					
-					
-					
-
 					$listacurso = Array("Agronegócio- Noturno", "Análise e Desenvolvimento de Sistemas- Manhã", "Análise e Desenvolvimento de Sistemas- Noturno", "Eventos- Noturno", "Gestão Empresarial- Noturno", "Produção Agropecuária- Manhã"  );
-					
-					
-					
 					
 					foreach($listacurso as $curso){
 						// reseta a variável/atributo
