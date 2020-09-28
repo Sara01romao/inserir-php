@@ -1,32 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <?php include_once 'view/dependencias.php'; ?>
-
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abertura</title>
+</head>
+<body>
 <h2 class="text-center" >
 	Bem-Vindo! <i class="fa fa-door-open"></i>
 </h2><hr>
 
 <form method="POST" action="">
 	
-<div class="container" >
-	<div class="form-row">
-		<h3> Informar itens para abertura do caixa</h3>
-		
-		
-		
-		
+<div class="container" style= "margin-top: 60px;
+    width: 500px;" >
 
-		<div class="col-md-8">
-		<br>
-			Adicionar valor: <i class="fa fa-money-check-alt"></i>
+
+
+<form action="../controller/_add_cliente.php" method="post" style= " margin-top: 20px;">
+
+<h4>Informe o valor de abertura</h4><br>
+<div class="form-group">
+                <label for="">Adicionar valor: <i class="fa fa-money-check-alt"></i></label>
+                
 			
-			<input class="form-control" type="text" name="vAbertura" required id="abert"><br>
-		</div>
+			<input class="form-control" type="text" name="nome"  placeholder="Nome completo" autocomplete="off" required><br>
+    
+  </div>
+
+ 
+	
 
 	
 		<div class="col-md-6">
 			<br>
-			<button class="btn btn-primary btn-lg">
+			<button class="btn btn-primary btn-sm">
 				
 				Inserir Valor <i class="fa fa-file-invoice-dollar"></i>
 
@@ -47,7 +56,9 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		$("#abert").mask("R$ 0000,00");
+		$("#abert").mask("0000,00");
 		
 	});
 </script>
+</body>
+</html>
