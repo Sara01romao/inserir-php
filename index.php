@@ -34,8 +34,9 @@
 
 	
   <button class="btn btn-primary btn-sm">
+  
 				
-				Inserir Valor <i class="fa fa-file-invoice-dollar"></i>
+				Inserir Valor <i class="fa fa-file-invoice-dollar"></i> 
 
 			</button>
 </div>

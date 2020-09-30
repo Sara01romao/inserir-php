@@ -13,7 +13,7 @@ $valor = $_POST['valor'];
 $inserir= mysqli_query($conexao, $sql);
 
 
-	//  header("Location: .index.php?abertura_add_success");
+	  header("Location: ../view/lista_abertura.php?abertura_add_success");
 
 
 ?>

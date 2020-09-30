@@ -11,14 +11,15 @@
 <body>
 
 
-<div class="container" style="margin-top: 60px;">
+<div class="container" style="margin-top: 50px; width: 800px;">
 
 <h2 class="text-center">
 		Lista de Aberturas <i class="fa fa-list"></i>
-	</h2><br>
+	</h2>
+
 
 <h5 class="text-right">
-		<a href="./index.php" class="btn btn-primary btn-xs"> Adicionar
+		<a href="../index.php" class="btn btn-primary btn-xs"> Adicionar
 			<i class="fa fa-user-plus"></i>
 		</a>
 	</h5>
@@ -29,14 +30,14 @@
       <th scope="col">Valor</th>
       <th scope="col">Data</th>
       
-      <th scope="col">Ação</th>
+      <th scope="col" >Ação</th>
     </tr>
   </thead>
  
    
         <?php
                 include '../conexao/conexao.php';
-                $sql= "SELECT * FROM `abertura` ORDER BY data ASC";
+                $sql= "SELECT * FROM `abertura` ORDER BY data DESC";
                 $busca = mysqli_query($conexao, $sql);
 
                 while ($array= mysqli_fetch_array($busca)){

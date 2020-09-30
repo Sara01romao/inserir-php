@@ -1,6 +1,6 @@
 <meta charset="UTF-8">
 
-]
+
 
 <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
 
