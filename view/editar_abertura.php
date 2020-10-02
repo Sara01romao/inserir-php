@@ -6,9 +6,9 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-<?php include_once 'view/dependencias.php'; ?>
+<?php include_once 'dependencias.php'; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abertura</title>
@@ -36,6 +36,7 @@
             
             $id= $array['id'];
             $valor= $array['valor'];
+            $data= $array['data'];
            
         
 
@@ -55,12 +56,18 @@
   <button class="btn btn-primary btn-sm">
   
 				
-				Inserir Valor <i class="fa fa-file-invoice-dollar"></i> 
+  Salvar alteração  <i class="fa fa-file-invoice-dollar"></i> 
 
 			</button>
-</div>
+            <?php }?>
+
 
 </form>
+<br>
+
+<a href="lista_abertura.php">	<i class="fa fa-chevron-left"></i> Voltar</a>
+</div>
+
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
@@ -72,5 +79,7 @@
 		
 	});
 </script>
+
+
 </body>
 </html>
