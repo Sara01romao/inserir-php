@@ -25,7 +25,7 @@
 
 
 
-<form action="./controller/_edit_abertura.php" method="post" style= " margin-top: 20px;">
+<form action="../controller/_edit_abertura.php" method="post" style= " margin-top: 20px;">
 
 
 <?php
@@ -45,10 +45,11 @@
 <h4>Informe o valor de abertura</h4><br>
 <div class="form-group">
                 <label for="">Adicionar valor: <i class="fa fa-money-check-alt"></i></label><br>
-                
+                <input type="number" class="form-control" name="id"  value= "<?php echo $id ?>" style= "display: none">
+
 			
-			<input class="form-control" type="text" name="valor"  id= "valor" placeholder="00,00" autocomplete="off" required value= "<?php echo $valor ?>">
-    
+			<input class="form-control" type="text" name="valor"  id= "valor"  required value= "<?php echo $valor ?>">
+    <input type="number" class="form-control" name="data"  value= "<?php echo $data ?>" style= "display: none">
   </div>
 
  

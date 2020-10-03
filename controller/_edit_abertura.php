@@ -2,20 +2,21 @@
 include '../conexao/conexao.php';
 
 
-$id= $_POST['id'];
+echo $id= $_POST['id'];
 
-$valor = $_POST['valor'];
-
-
-
-
- $sql = "UPDATE `abertura` SET `valor`= '$valor' WHERE id = $id";
+echo $valor = $_POST['valor'];
+echo $data = $_POST['data'];
 
 
-$atualizar= mysqli_query($conexao, $sql);
 
 
-	 header("Location: ../view/lista_abertura.php?abertura_edit_success");
+ $sql = "UPDATE `abertura` SET `valor`= '$valor', `data`= now()  WHERE id = $id";
+
+
+ $atualizar= mysqli_query($conexao, $sql);
+
+
+ 	 header("Location: ../view/lista_abertura.php?abertura_edit_success");
 
 
 ?>
