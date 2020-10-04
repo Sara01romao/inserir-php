@@ -2,10 +2,10 @@
 include '../conexao/conexao.php';
 
 
-echo $id= $_POST['id'];
+ $id= $_POST['id'];
 
-echo $valor = $_POST['valor'];
-echo $data = $_POST['data'];
+ $valor = $_POST['valor'];
+ $data = $_POST['data'];
 
 
 
