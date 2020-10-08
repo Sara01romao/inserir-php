@@ -15,7 +15,7 @@ include '../conexao/conexao.php';
   $inserir= mysqli_query($conexao, $sql);
 
 
- 	  // header("Location: ../view/lista_sangria.php?sangria_add_success");
+ 	   header("Location: ../view/lista_sangria.php?sangria_add_success");
 
 
 ?>
