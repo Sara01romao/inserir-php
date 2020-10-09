@@ -52,7 +52,7 @@
             <td><?php echo $dh ?></td>
           
             <td><a class="btn btn-warning btn-sm" href="editar_sangria.php?id=<?php echo $id?>" role="button"><i class="fa fa-edit"></i> &nbsp;Editar</a>
-            <a class="btn btn-danger btn-sm" href="../controller/deletar_sangria.php?id=<?php echo $id?>" role="button"><i class="fa fa-trash"></i> &nbsp;Excluir</a>
+            <a class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja deletar este registro?')" href="../controller/deletar_sangria.php?id=<?php echo $id?>" role="button"><i class="fa fa-trash"></i> &nbsp;Excluir</a>
             </td>
         </tr>
         <?php } ?>
