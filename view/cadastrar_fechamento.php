@@ -39,9 +39,14 @@
 				Inserir Valor <i class="fa fa-file-invoice-dollar"></i> 
 
 			</button>
+
+            </form>
+
+            <br>
+  <a href="lista_fechamento.php">	<i class="fa fa-chevron-left"></i> Voltar</a>
 </div>
 
-</form>
+
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
