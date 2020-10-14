@@ -32,41 +32,8 @@
     </form>
   </div>
   <hr>
-  
   <div class="form-group">
-    <label >RG</label>
-    <input type="text" class="form-control" id= "rg" name="rg" required>
-  </div>
-
-  <div class="form-group">
-    <label >CPF</label>
-    <input type="text" class="form-control" id= "cpf" name="cpf" required>
-  </div>
-
-
-
-  <script>
-
-        function validarForm() { 
-                var optionSelect = document.getElementById("tipo").value;
-                
-                if(optionSelect =="Aluno" ){ 
-                    
-                    document.getElementById("curso").disabled = false;
-
-                }else{
-                    document.getElementById("curso").value ='';
-                    document.getElementById("curso").disabled = true;
-                    
-                }
-
-            }
-            //verificar select option tipo e bloquear cursos
-</script> 
-
-
-  <div class="form-group">
-    <label >Tipo</label>
+    <label >Serviço</label>
     <select class="custom-select" name="tipo" id="tipo" onchange="validarForm()" required>
                 <option value="" disabled="" selected>selecione o tipo</option>
                 <option value="Aluno">Aluno</option>
@@ -74,27 +41,22 @@
                 <option value="Professor">Professor</option>
         </select>
   </div>
+  <div class="form-group">
+
+  
+    <label >Quantidade</label>
+    <input type="text" class="form-control" id= "qtd" name="qtd" required>
+  </div>
 
   
 
-  <div class="form-group">
-    <label >Curso</label>
-    <select class="custom-select" name="curso" id="curso" disabled >
-                <option  value="" disabled="" selected>selecione o curso</option>
-                <option value="Agronegócio- Noturno">Agronegócio- Noturno</option>
-			<option value="Análise e Desenvolvimento de Sistemas- Manhã">Análise e Desenvolvimento de Sistemas- Manhã</option>
-			<option value="Análise e Desenvolvimento de Sistemas- Noturno">Análise e Desenvolvimento de Sistemas- Noturno</option>
-			<option value="Eventos- Noturno">Eventos- Noturno</option>
-			<option value="Gestão Empresarial- Noturno">Gestão Empresarial- Noturno</option>
-			<option value="Produção Agropecuária- Manhã">Produção Agropecuária- Manhã</option>
-        </select>
-  </div>
 
 
+  
   
   <button class="btn btn-success btn-sm">
 				
-  Cadastrar <i class="fa fa-plus"></i>
+  Confirmar <i class="fa fa-check"></i>
 
 			</button><br><br>
   
