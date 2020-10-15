@@ -15,6 +15,9 @@
 <h2 class="text-center">Cadastrar Venda <i class="fa fa-shopping-cart"></i></h4>
 <hr>
 
+<!-- <h2 class="text-center">Cadastrar Venda <i class="fa fa-shopping-cart"></i></h4>
+<hr>
+
 
 <form action="../controller/_add_cliente.php" method="post" style= " margin-top: 20px;">
 <div class="form-group">
@@ -32,7 +35,9 @@
     </form>
   </div>
   <hr>
+  
   <div class="form-group">
+  
     <label >Serviço</label>
     <select class="custom-select" name="tipo" id="tipo" onchange="validarForm()" required>
                 <option value="" disabled="" selected>selecione o tipo</option>
@@ -61,8 +66,49 @@
 			</button><br><br>
   
   
-</form>
+</form> -->
 
+<form>
+<h5 class="text-right">
+		<a href="./cadastrar_cliente.php" class="btn btn-primary btn-xs"> Adicionar 
+			<i class="fa fa-user-plus"></i>
+		</a>
+	</h5>
+  <div class="form-row">
+  
+    <div class="form-group col-md-12">
+      <label for="">Buscar Cliente</label>
+      <input type="text" class="form-control" id="" placeholder="Informe RG">
+    </div>
+
+    
+    
+  <form class="border border-secondary"> 
+  <div class="form-group col-md-9">
+      <label for="">Serviço</label>
+      <select id="" class="form-control">
+        <option selected>Escolher...</option>
+        <option>...</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-3">
+      <label for="">Quantidade</label>
+      <input type="text" class="form-control" id="">
+    </div>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">+ serviço</button>
+  
+  </form>
+  <br>
+
+
+  <button type="submit" class="btn btn-primary">Entrar</button> <br>
+
+
+</form>
+<br>
 
 <a href="lista_vendas.php">	<i class="fa fa-chevron-left"></i> Voltar</a>
 
