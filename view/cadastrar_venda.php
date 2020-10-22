@@ -1,116 +1,108 @@
+<?php
+ include '../conexao/conexao.php';
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <?php include_once 'dependencias.php'; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+     <!-- icones -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     
-  <title>Cadastrar Venda</title>
+  <title>Cadastrar Cliente</title>
 </head>
 <body>
     
-<div class="container" style= "margin-top: 60px;
-    width: 500px;" >
+<div class="container" id="tamanho" >
 
 <h2 class="text-center">Cadastrar Venda <i class="fa fa-shopping-cart"></i></h4>
 <hr>
 
-<!-- <h2 class="text-center">Cadastrar Venda <i class="fa fa-shopping-cart"></i></h4>
-<hr>
 
-
-<form action="../controller/_add_cliente.php" method="post" style= " margin-top: 20px;">
+ <form action="../controller/_add_venda.php" method="post"> 
 <div class="form-group">
-<h5 class="text-right">
-		<a href="./cadastrar_cliente.php" class="btn btn-primary btn-xs"> Adicionar 
-			<i class="fa fa-user-plus"></i>
-		</a>
-	</h5>
-    <label >Buscar cliente</label>
-  
-    <form class="form-inline my-2 my-lg-0" >
-   
-      <input class="form-control mr-sm-2" name="nome"  placeholder="Nome completo" autocomplete="off" required>
-      <button class="btn btn-outline-success my-2 my-xs-0" type="submit">Pesquisar</button>
-    </form>
+  <div>
+  <label >Nome</label>
+  <select name="idCliente" class="custom-select">
+                    <option>Selecione</option>
+                    <?php
+                      $sql = "SELECT * FROM cliente ";
+                      $resultado_servicos = mysqli_query($conexao, $sql);
+                      while($row_servico = mysqli_fetch_assoc($resultado_servicos)){ ?>
+                        <option value="<?php echo $row_servico['id']; ?>"><?php echo $row_servico['nome']; ?></option> <?php
+                      }
+                    ?>
+                  </select><br><br>
+
+
+    
   </div>
-  <hr>
+<br>
   
-  <div class="form-group">
+  <fieldset id="schedule-items" style="border: 1px solid red;" >
+  <legend>Serviços
+ 
+  </legend>
   
-    <label >Serviço</label>
-    <select class="custom-select" name="tipo" id="tipo" onchange="validarForm()" required>
-                <option value="" disabled="" selected>selecione o tipo</option>
-                <option value="Aluno">Aluno</option>
-                <option value="Colaborador">Colaborador</option>
-                <option value="Professor">Professor</option>
-        </select>
-  </div>
-  <div class="form-group">
+  <div class="schedule-item">
+        <div>
+            <select name="servico" id="servico" class="custom-select">
+                    <option>Selecione</option>
+                    <?php
+                      $sql = "SELECT * FROM servico";
+                      $resultado_servicos = mysqli_query($conexao, $sql);
+                      while($row_servico = mysqli_fetch_assoc($resultado_servicos)){ ?>
+                        <option value="<?php echo $row_servico['id']; ?>"><?php echo $row_servico['nome']; ?></option> <?php
+                      }
+                    ?>
+                  </select><br><br>
+
+        </div>
+
+        
+
+
+        
+        
+        <div class="from-group">
+          
+            <label >Quantidade</label>
+            <input type="text" class="form-control" name="quantidade"  placeholder="Nome completo" autocomplete="off" required>
+          
+        
+        </div>
+
+        
+                     
+      <br>
+        
+        
+   </div>
+
+ 
+  </fieldset>
+  
+  
+
+
 
   
-    <label >Quantidade</label>
-    <input type="text" class="form-control" id= "qtd" name="qtd" required>
-  </div>
-
-  
-
-
-
-  
-  
-  <button class="btn btn-success btn-sm">
+  <button class="btn btn-success btn-sm" style= "margin-top: 10px;">
 				
-  Confirmar <i class="fa fa-check"></i>
+  Cadastrar <i class="fa fa-plus"></i>
 
 			</button><br><br>
   
   
-</form> -->
-
-<form>
-<h5 class="text-right">
-		<a href="./cadastrar_cliente.php" class="btn btn-primary btn-xs"> Adicionar 
-			<i class="fa fa-user-plus"></i>
-		</a>
-	</h5>
-  <div class="form-row">
-  
-    <div class="form-group col-md-12">
-      <label for="">Buscar Cliente</label>
-      <input type="text" class="form-control" id="" placeholder="Informe RG">
-    </div>
-
-    
-    
-  <form class="border border-secondary"> 
-  <div class="form-group col-md-9">
-      <label for="">Serviço</label>
-      <select id="" class="form-control">
-        <option selected>Escolher...</option>
-        <option>...</option>
-      </select>
-    </div>
-
-    <div class="form-group col-md-3">
-      <label for="">Quantidade</label>
-      <input type="text" class="form-control" id="">
-    </div>
-  </div>
-  
-  <button type="submit" class="btn btn-primary">+ serviço</button>
-  
-  </form>
-  <br>
-
-
-  <button type="submit" class="btn btn-primary">Entrar</button> <br>
-
-
 </form>
-<br>
 
-<a href="lista_vendas.php">	<i class="fa fa-chevron-left"></i> Voltar</a>
+
+<a href="lista_cliente.php">	<i class="fa fa-chevron-left"></i> Voltar</a>
 
 </div>
 
@@ -125,17 +117,8 @@
 
 
 
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script> 
-<script type="text/javascript">
-	$(document).ready(function(){
-		$("#cpf").mask("000.000.000-00");
-        $("#rg").mask("00.000.000-0");
-		
-	});
-
 	
-</script>
+
 
     
 </body>
