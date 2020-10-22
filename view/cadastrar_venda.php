@@ -102,7 +102,7 @@
 </form>
 
 
-<a href="lista_cliente.php">	<i class="fa fa-chevron-left"></i> Voltar</a>
+<a href="lista_venda.php">	<i class="fa fa-chevron-left"></i> Voltar</a>
 
 </div>
 

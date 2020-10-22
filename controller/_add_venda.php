@@ -35,5 +35,5 @@ $id_venda = mysqli_insert_id($conexao);//pega  id criado anteriormente da venda
  $inserir= mysqli_query($conexao, $sql);
 
  //printf("Last inserted record has id %d\n", mysql_insert_id());
-
+ header("Location: ../view/lista_venda.php?venda_add_success");
  ?>
