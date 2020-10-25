@@ -64,7 +64,7 @@
             <td><?php echo $servico ?></td>
             <td></td>
              
-            <td><a class="btn btn-warning btn-sm" href="editar_cliente.php?id=<?php echo $id?>" role="button"><i class="fa fa-ban"></i> &nbsp;Estorna venda</a>
+            <td><a class="btn btn-danger btn-sm" href="editar_cliente.php?id=<?php echo $id?>" role="button"><i class="fa fa-ban"></i> &nbsp;Estorna venda</a>
             </td>
         </tr>
         <?php } ?>
