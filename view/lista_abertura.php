@@ -19,7 +19,7 @@
 
 
 <h5 class="text-right">
-		<a href="../index.php" class="btn btn-primary btn-xs"> Adicionar
+		<a href="cadastrar_abertura.php" class="btn btn-primary btn-xs"> Adicionar
 			<i class="fa fa-user-plus"></i>
 		</a>
 	</h5>
@@ -30,14 +30,14 @@
       <th scope="col">Valor</th>
       <th scope="col">Data</th>
       
-      <th scope="col" >Ação</th>
+      
     </tr>
   </thead>
  
    
         <?php
                 include '../conexao/conexao.php';
-                $sql= "SELECT * FROM `abertura` ORDER BY data DESC";
+                $sql= "SELECT * FROM `abertura` ORDER BY id DESC";
                 $busca = mysqli_query($conexao, $sql);
 
                 while ($array= mysqli_fetch_array($busca)){
@@ -51,9 +51,7 @@
             <td><?php echo $valor ?></td>
             <td><?php echo $data ?></td>
           
-            <td><a class="btn btn-warning btn-sm" href="editar_abertura.php?id=<?php echo $id?>" role="button"><i class="fa fa-edit"></i> &nbsp;Editar</a>
-            <a class="btn btn-danger btn-sm" href="../controller/deletar_abertura.php?id=<?php echo $id?>" role="button"><i class="fa fa-trash"></i> &nbsp;Excluir</a>
-            </td>
+            
         </tr>
         <?php } ?>
    

@@ -27,11 +27,11 @@ include_once 'dependencias.php';
           Caixa
         </a>
         <div class="dropdown-menu  " aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Abertura</a>
+          <a class="dropdown-item" href="view/lista_abertura.php">Abertura</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="cadastrar_sangria.php">Sangria</a>
+          <a class="dropdown-item" href="view/lista_sangria.php">Sangria</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="cadastrar_fechamento.php">Fechamento</a>
+          <a class="dropdown-item" href="view/lista_fechamento.php">Fechamento</a>
         </div>
       </li>
       <li class="nav-item">
