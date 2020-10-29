@@ -29,8 +29,6 @@
       <th scope="col">Id</th>
       <th scope="col">Valor</th>
       <th scope="col">Data</th>
-      
-      <th scope="col" >Ação</th>
     </tr>
   </thead>
  
@@ -51,9 +49,6 @@
             <td><?php echo $valor ?></td>
             <td><?php echo $data ?></td>
           
-            <td><a class="btn btn-warning btn-sm" href="editar_fechamento.php?id=<?php echo $id?>" role="button"><i class="fa fa-edit"></i> &nbsp;Editar</a>
-            <a class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja deletar este registro?')" href="../controller/deletar_fechamento.php?id=<?php echo $id?>" role="button"><i class="fa fa-trash"></i> &nbsp;Excluir</a>
-            </td>
         </tr>
         <?php } ?>
    
