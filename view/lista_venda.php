@@ -42,10 +42,11 @@
    
         <?php
                 include '../conexao/conexao.php';
-                $sql= "SELECT venda.id, venda.data, cliente.nome as cliente, itens_venda.quantidade as quantidade, servico.nome from `venda` INNER JOIN `cliente` on (venda.cliente_id= cliente.id) INNER JOIN `itens_venda` on (venda.id= itens_venda.id_venda) INNER JOIN `servico` on (itens_venda.id_servico= servico.id) ORDER BY id DESC";
+                $sql= "SELECT venda.id as vendaId, venda.data, cliente.nome as cliente, itens_venda.quantidade as quantidade, itens_venda.id,  servico.nome from `venda` INNER JOIN `cliente` on (venda.cliente_id= cliente.id) INNER JOIN `itens_venda` on (venda.id= itens_venda.id_venda) INNER JOIN `servico` on (itens_venda.id_servico= servico.id) ORDER BY id DESC";
                 $busca = mysqli_query($conexao, $sql);
 
                 while ($array= mysqli_fetch_array($busca)){
+                   $vendaId= $array['vendaId'];
                     $id= $array['id'];
                      $data= $array['data'];
                      $cliente= $array['cliente'];
@@ -57,14 +58,16 @@
 
         ?>
         <tr> 
-            <td><?php echo $id ?></td>
+            <td><?php echo $vendaId ?></td>
             <td><?php echo $data ?></td>
             <td><?php echo $cliente ?></td>
             <td><?php echo $quantidade ?></td>
             <td><?php echo $servico ?></td>
+            <td><?php echo $id ?></td>
             <td></td>
              
-            <td><a class="btn btn-danger btn-sm" href="editar_cliente.php?id=<?php echo $id?>" role="button"><i class="fa fa-ban"></i> &nbsp;Estorna venda</a>
+            <td> <a class="btn btn-danger btn-sm" href="../controller/estorna_venda.php?id=<?php echo $id?>" role="button"><i class="fa fa-ban"></i> &nbsp;Excluir</a>
+
             </td>
         </tr>
         <?php } ?>
