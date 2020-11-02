@@ -18,7 +18,8 @@
 </head>
 <body>
     
-<div class="container" id="tamanho" >
+<div class="container" id="tamanho"  style= "margin-top: 60px;
+    width: 500px;" >
 
 <h2 class="text-center">Cadastrar Venda <i class="fa fa-shopping-cart"></i></h4>
 <hr>
@@ -43,8 +44,8 @@
     
   </div>
 <br>
-  
-  <fieldset id="schedule-items" style="border: 1px solid red;" >
+  <hr>
+  <fieldset id="schedule-items" >
   <legend>Serviços
  
   </legend>
@@ -72,7 +73,7 @@
         <div class="from-group">
           
             <label >Quantidade</label>
-            <input type="text" class="form-control" name="quantidade"  placeholder="Nome completo" autocomplete="off" required>
+            <input type="text" class="form-control" name="quantidade"  placeholder="quantidade" autocomplete="off" required>
           
         
         </div>

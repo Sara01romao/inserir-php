@@ -114,7 +114,7 @@
 
 
 
-  <button class="btn btn-success btn-sm">
+  <button class="btn btn-success btn-sm" onclick="return confirm('Você tem certeza que deseja ALTERAR ?')">
 				
   Salvar alteração <i class="fa fa-edit"></i>
 
