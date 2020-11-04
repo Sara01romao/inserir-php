@@ -5,13 +5,13 @@ include '../conexao/conexao.php';
 
 
 
-     $sql = "DELETE FROM `venda`   WHERE id = $id";
+     $sql = "DELETE FROM `itens_venda`   WHERE id = $id";
     //  $sql = "DELETE FROM `itens_venda`  WHERE id_venda = $id";
      $deletar= mysqli_query($conexao, $sql);
 
     
 
 
-     header("Location: ../view/lista_venda.php?client_delete_success");
+     header("Location: ../view/lista_itens.php?client_delete_success");
 
 ?>

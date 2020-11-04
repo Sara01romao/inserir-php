@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
     <link rel="stylesheet" href="style.css">
-    <title>Lista de Vendas</title>
+    <title>Lista de itens</title>
 </head>
 <body>
 
@@ -17,7 +17,7 @@
 <div class="container" style="margin-top: 60px;">
 
 <h2 class="text-center">
-		Lista de vendas <i class="fa fa-list"></i>
+		Lista de itens <i class="fa fa-list"></i>
 	</h2><br>
 
 <h5 class="text-right">
@@ -29,11 +29,11 @@
   <thead >
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Data</th>
-      <th scope="col">Cliente</th>
+      <th scope="col">id_venda</th>
+      <th scope="col">id_servico</th>
       <th scope="col">Quantidade</th>
-      <th scope="col">Serviço</th>
-      
+      <th scope="col">total</th>
+  
       
       <th scope="col">Ação</th>
     </tr>
@@ -42,17 +42,16 @@
    
         <?php
                 include '../conexao/conexao.php';
-                $sql= "SELECT venda.id, venda.data, cliente.nome as cliente, itens_venda.quantidade as quantidade, servico.nome from `venda` INNER JOIN `cliente` on (venda.cliente_id= cliente.id) INNER JOIN `itens_venda` on (venda.id= itens_venda.id_venda) INNER JOIN `servico` on (itens_venda.id_servico= servico.id) ORDER BY id DESC";
+                $sql= "SELECT * FROM `itens_venda` ORDER  BY id DESC";
                 $busca = mysqli_query($conexao, $sql);
 
                 while ($array= mysqli_fetch_array($busca)){
-                   
-                     $id= $array['id'];
-                     $data= $array['data'];
-                     $cliente= $array['cliente'];
+                   $id= $array['id'];
+                    $id_venda= $array['id_venda'];
+                     $id_servico= $array['id_servico'];
                      $quantidade= $array['quantidade'];
-                     $servico= $array['nome'];
-                     
+                     $total= $array['total'];
+                    
                      
 
                     
@@ -60,15 +59,14 @@
         ?>
         <tr> 
             <td><?php echo $id ?></td>
-            <td><?php echo $data ?></td>
-            <td><?php echo $cliente ?></td>
+            <td><?php echo $id_venda ?></td>
+            <td><?php echo $id_servico ?></td>
             <td><?php echo $quantidade ?></td>
-            <td><?php echo $servico ?></td>
-           
+            <td><?php echo $total ?></td>
             
             <td></td>
              
-            <td> <a class="btn btn-danger btn-sm" href="../controller/estorna_venda.php?id=<?php echo $id?>" role="button"><i class="fa fa-ban"></i> &nbsp;Excluir</a>
+            <td> <a class="btn btn-danger btn-sm" href="../controller/deletar_item.php?id=<?php echo $id?>" role="button"><i class="fa fa-ban"></i> &nbsp;Excluir</a>
 
             </td>
         </tr>
