@@ -38,7 +38,7 @@
                 include '../conexao/conexao.php';
                 // $sql= "SELECT * FROM `itens_venda` ORDER BY id ASC";
                 $sql= "SELECT itens_venda.id as id, servico.nome as nome, itens_venda.quantidade as quantidade ,itens_venda.quantidade * servico.preco as total
-                FROM `itens_venda` inner JOIN `servico`on (servico.id=itens_venda.id_servico) ";
+                FROM `itens_venda` inner JOIN `servico`on (servico.id=itens_venda.id_servico) ORDER BY id DESC ";
 
                 $busca = mysqli_query($conexao, $sql);
 
