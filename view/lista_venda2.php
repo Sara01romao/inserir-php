@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+<?php include_once 'dependencias.php'; ?>
+	<?php include_once 'menu.php'; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -9,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     
     <link rel="stylesheet" href="style.css">
-    <title>Lista venda 2</title>
+    <title>Lista Venda </title>
 </head>
 <body>
 
@@ -17,7 +19,7 @@
 <div class="container" style="margin-top: 60px;">
 
 <h2 class="text-center">
-Lista venda 2 <i class="fa fa-list"></i>
+Lista Venda  <i class="fa fa-list"></i>
 	</h2><br>
 
 <h5 class="text-right">

@@ -4,7 +4,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
 <?php include_once 'dependencias.php'; ?>
+	<?php include_once 'menu.php'; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
