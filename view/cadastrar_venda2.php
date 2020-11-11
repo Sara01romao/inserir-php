@@ -30,7 +30,7 @@ include '../conexao/conexao.php';
   <select name="idCliente" class="custom-select">
                     <option>Selecione</option>
                     <?php
-                      $sql = "SELECT * FROM cliente ";
+                      $sql = "SELECT * FROM cliente ORDER BY nome ASC";
                       $resultado_servicos = mysqli_query($conexao, $sql);
                       while($row_servico = mysqli_fetch_assoc($resultado_servicos)){ ?>
                         <option value="<?php echo $row_servico['id']; ?>"><?php echo $row_servico['nome']; ?></option> <?php
