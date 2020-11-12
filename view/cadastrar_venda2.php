@@ -21,26 +21,62 @@ include '../conexao/conexao.php';
 
 <h2 class="text-center">Cadastrar Venda <i class="fa fa-shopping-cart"></i></h4>
 <hr>
+<!-- ----------------------------------------------------------- -->
+<section>
+<form neme="searchform" method="post" action="">
+  Buscar Cliente: <input type="text" name="buscar" required/>
+  <input type="submit" value="buscar"/>
+  <br>
+  <?php
 
+    $buscar =  $_POST['buscar'];
+
+    if($buscar!=null){
+    $query = mysqli_query($conexao, "SELECT * FROM cliente WHERE nome LIKE '%$buscar%'");
+    $num   = mysqli_num_rows($query);
+    if($num >0){
+        while($row = mysqli_fetch_assoc($query)){
+          echo $row['nome'].' - '.$row['id'].' - '.$row['tipo'].'<br/><hr>';
+        }
+    }else{
+      echo "Esta Pessoa Não Existe!";
+    }
+  }
+    
+  
+  ?>
+
+  
+  </form>
+  <br>
+  <div style="border: 1px solid red; text-align: center;">
+
+  
+
+
+</section>
+
+
+<!-- -------------------------------------------------------- -->
 
  <form action="../controller/_add_venda2.php" method="post"> 
-<div class="form-group">
-  <div>
-  <label >Nome</label>
-  <select name="idCliente" class="custom-select">
-                    <option>Selecione</option>
-                    <?php
-                      $sql = "SELECT * FROM cliente ORDER BY nome ASC";
-                      $resultado_servicos = mysqli_query($conexao, $sql);
-                      while($row_servico = mysqli_fetch_assoc($resultado_servicos)){ ?>
-                        <option value="<?php echo $row_servico['id']; ?>"><?php echo $row_servico['nome']; ?></option> <?php
-                      }
-                    ?>
-                  </select><br><br>
+    <div class="form-group">
+      <div>
+      <label >Nome</label>
+      <select name="idCliente" class="custom-select">
+                        <option>Selecione</option>
+                        <?php
+                          $sql = "SELECT * FROM cliente ORDER BY nome ASC";
+                          $resultado_servicos = mysqli_query($conexao, $sql);
+                          while($row_servico = mysqli_fetch_assoc($resultado_servicos)){ ?>
+                            <option value="<?php echo $row_servico['id']; ?>"><?php echo $row_servico['nome']; ?></option> <?php
+                          }
+                        ?>
+                      </select><br><br>
 
 
-    
-  </div>
+        
+      </div>
 <br>
   
   <fieldset id="schedule-items" style="border: 1px solid red;" >
@@ -65,8 +101,6 @@ include '../conexao/conexao.php';
 
         
 
-
-        
         
         <div class="from-group">
           
