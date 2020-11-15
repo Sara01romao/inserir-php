@@ -16,7 +16,7 @@ include '../conexao/conexao.php';
   <title>Cadastrar Cliente</title>
 </head>
 <body>
-    
+    <br>
 <div class="container" id="tamanho" >
 
 <h2 class="text-center">Cadastrar Venda <i class="fa fa-shopping-cart"></i></h4>
@@ -27,13 +27,18 @@ include '../conexao/conexao.php';
  <form action="../controller/_add_venda2.php" method="post"> 
    
 <br>
+<h5 class="text-right">
+		<a href="./cadastrar_cliente.php" class="btn btn-primary btn-xs"> Cadastrar Cliente
+			<i class="fa fa-user-plus"></i>
+		</a>
+	</h5>
 <div class="form-group">
-<label >Selecionar Cliente</label><br>
-<input type="search" name="idCliente" list="clientes" required>
-<datalist id="clientes" name="idCliente">
+<label >Selecionar  Cliente:</label><br>
+<input type="search" name="idCliente" list="clientes" autocomplete="off" required style="border-radius: 5px;">
+<datalist id="clientes" name="idCliente" >
                       <?php
                           
-                          $sql = "SELECT * FROM cliente  WHERE nome LIKE '%$idCliente%'";
+                          $sql = "SELECT * FROM cliente  WHERE nome LIKE '%$idCliente%'ORDER BY nome ASC";
                           $resultado_servicos = mysqli_query($conexao, $sql);
                         
                             while($row_servico = mysqli_fetch_assoc($resultado_servicos)){ ?>
@@ -56,12 +61,12 @@ include '../conexao/conexao.php';
 </datalist>
 
 </div>
-
+<hr>
 
 <br>
   
-  <fieldset id="schedule-items" style="border: 1px solid red;" >
-  <legend>Serviços
+  <fieldset id="schedule-items" style="border: 1px solid black; padding: 10px;" >
+  <legend >Serviços
  
   </legend>
   
