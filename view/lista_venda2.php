@@ -32,10 +32,13 @@ Lista Venda  <i class="fa fa-list"></i>
     <tr>
       <th scope="col">Id</th>
       <th scope="col">data</th>
-      <th scope="col">cliente_id</th>
-      <th scope="col">servico_id</th>
-      <th scope="col">item_id</th>
-      <th scope="col">quantidade</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Serviço</th>
+      <th scope="col">Quantidade</th>
+      <th scope="col">Total</th>
+      <th scope="col">Status Venda</th>
+    
+      
      
       <th scope="col">Ação</th>
     </tr>
@@ -44,16 +47,24 @@ Lista Venda  <i class="fa fa-list"></i>
    
         <?php
                 include '../conexao/conexao.php';
-                $sql= "SELECT venda.id as vid, venda.data, venda.cliente_id, venda.id_servico, venda.item_id as id , venda.quantidade FROM `venda` ORDER BY vid DESC";
+                // $sql= "SELECT venda.id as vid, venda.data, venda.cliente_id, venda.id_servico, venda.item_id as id , venda.quantidade FROM `venda` ORDER BY vid DESC";
+
+                $sql= "SELECT venda.id as vid, venda.data, cliente.nome as cliente, servico.nome as servico, venda.item_id as id , venda.quantidade, venda.quantidade * servico.preco as total
+                FROM `venda` 
+                INNER JOIN `cliente` on (venda.cliente_id=cliente.id)
+                INNER JOIN `servico` on (venda.id_servico= servico.id)";
+
+
                 $busca = mysqli_query($conexao, $sql);
 
                 while ($array= mysqli_fetch_array($busca)){
                     $vid= $array['vid'];  
                     $data= $array['data'];
-                    $cliente_id= $array['cliente_id'];
-                    $servico_id= $array['id_servico'];
+                    $cliente= $array['cliente'];
+                    $servico= $array['servico'];
                     $id= $array['id'];
                     $quantidade= $array['quantidade'];
+                    $total= $array['total'];
                     
                     if ($id==null){
                       $id= 'Venda Estornada';
@@ -68,10 +79,13 @@ Lista Venda  <i class="fa fa-list"></i>
         <tr> 
             <td><?php echo $vid ?></td>
             <td><?php echo $data ?></td>
-            <td><?php echo $cliente_id ?></td>
-            <td><?php echo $servico_id ?></td>
-            <td><?php echo $id ?></td>
+            <td><?php echo $cliente ?></td>
+            <td><?php echo $servico ?></td>
             <td><?php echo $quantidade ?></td>
+            <td><?php echo $total ?></td>
+            <td><?php echo $id ?></td>
+            
+            
             
             <td>
             <a class="btn btn-danger btn-sm" href="../controller/deletar_venda2.php?id=<?php echo $id?>" role="button"><i class="fa fa-ban"></i> &nbsp;Estorna</a>

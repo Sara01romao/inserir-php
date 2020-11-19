@@ -65,8 +65,8 @@
             <td><?php echo $cpf ?></td>
             <td><?php echo $tipo ?></td>
             <td><?php echo $curso ?></td>
-            <td><a class="btn btn-warning btn-sm" href="editar_cliente.php?id=<?php echo $id?>" role="button"><i class="fa fa-edit"></i> &nbsp;Editar</a>
-            <a class="btn btn-danger btn-sm" onclick="return confirm('Você tem certeza que deseja excluir ?')" href="../controller/deletar_cliente.php?id=<?php echo $id?>" role="button"><i class="fa fa-trash"></i> &nbsp;Excluir</a>
+            <td><a class="btn btn-warning btn-sm" href="editar_cliente.php?id=<?php echo $id?>" role="button"><i class="fa fa-edit"></i> &nbsp;Editar</a><br>
+            <a class="btn btn-danger btn-sm" style="margin-top: 10px" onclick="return confirm('Você tem certeza que deseja excluir ?')" href="../controller/deletar_cliente.php?id=<?php echo $id?>" role="button"><i class="fa fa-trash"></i> &nbsp;Excluir</a>
             </td>
         </tr>
         <?php } ?>

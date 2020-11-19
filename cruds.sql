@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Out-2020 às 23:33
+-- Tempo de geração: 19-Nov-2020 às 02:23
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.4.7
 
@@ -38,11 +38,9 @@ CREATE TABLE `abertura` (
 --
 
 INSERT INTO `abertura` (`id`, `valor`, `data`) VALUES
-(22, 88, '2020-10-04'),
-(23, 8, '2020-10-04'),
-(24, 6, '2020-10-04'),
-(26, 44, '2020-10-09'),
-(27, 2, '2020-10-09');
+(32, 1.99, '2020-10-29'),
+(33, 50, '2020-10-29'),
+(34, 10.68, '2020-10-29');
 
 -- --------------------------------------------------------
 
@@ -64,10 +62,14 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`id`, `nome`, `rg`, `cpf`, `tipo`, `curso`) VALUES
-(80, 'Maeve', '55.555.555-5', '555.555.555-55', '', ''),
 (81, 'joão', '99.999.999-9', '555.555.555-55', 'Professor', ''),
-(87, 'Dolores', '99.999.999-9', '555.555.555-55', 'Professor', ''),
-(88, 'Naruto', '24.244.242-4', '000.000.000-00', 'Aluno', 'Análise e Desenvolvimento de Sistemas- Noturno');
+(87, 'Dolores', '99.999.999-9', '555.555.555-55', 'Colaborador', ''),
+(88, 'Naruto', '24.244.242-4', '000.000.000-00', 'Aluno', 'Análise e Desenvolvimento de Sistemas- Noturno'),
+(89, 'Sasuke', '55.555.555-5', '555.555.555-55', 'Aluno', 'Gestão Empresarial- Noturno'),
+(90, 'Maeve', '24.244.242-4', '555.555.555-55', 'Professor', ''),
+(91, 'Abelha', '99.999.999-9', '222.222.222-22', 'Colaborador', ''),
+(92, 'Abelha Jataí', '99.999.999-9', '555.555.555-55', 'Colaborador', ''),
+(93, 'Naruto Uzumaki', '55.555.555-5', '444.444.444-44', 'Aluno', 'Gestão Empresarial- Noturno');
 
 -- --------------------------------------------------------
 
@@ -88,7 +90,9 @@ CREATE TABLE `fechamento` (
 INSERT INTO `fechamento` (`id`, `valor`, `data`) VALUES
 (2, 34, '2020-10-09'),
 (6, 93, '2020-10-11'),
-(8, 5, '2020-10-11');
+(8, 5, '2020-10-11'),
+(9, 9.99, '2020-10-29'),
+(10, 50, '2020-11-08');
 
 -- --------------------------------------------------------
 
@@ -98,20 +102,21 @@ INSERT INTO `fechamento` (`id`, `valor`, `data`) VALUES
 
 CREATE TABLE `itens_venda` (
   `id` int(11) NOT NULL,
-  `id_venda` int(11) NOT NULL,
-  `id_servico` int(11) NOT NULL,
-  `quantidade` int(11) NOT NULL,
-  `total` float NOT NULL
+  `id_venda` int(11) DEFAULT NULL,
+  `id_servico` int(11) DEFAULT NULL,
+  `quantidade` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `itens_venda`
 --
 
-INSERT INTO `itens_venda` (`id`, `id_venda`, `id_servico`, `quantidade`, `total`) VALUES
-(74, 82, 1, 4, 0),
-(75, 83, 2, 5, 0),
-(76, 84, 3, 3, 0);
+INSERT INTO `itens_venda` (`id`, `id_venda`, `id_servico`, `quantidade`) VALUES
+(179, NULL, 3, 18),
+(182, NULL, 2, 2),
+(184, NULL, 3, 2),
+(185, NULL, 1, 2),
+(186, NULL, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -130,10 +135,9 @@ CREATE TABLE `sangria` (
 --
 
 INSERT INTO `sangria` (`id`, `valor`, `dh`) VALUES
-(9, 112, '2020-10-09 00:08:01'),
-(13, 8, '2020-10-09 00:07:15'),
-(15, 7, '2020-10-09 00:05:09'),
-(16, 9, '2020-10-09 00:05:33');
+(17, 11.11, '2020-10-29 22:22:20'),
+(18, 200.55, '2020-10-29 22:25:32'),
+(19, 30.99, '2020-10-29 22:25:56');
 
 -- --------------------------------------------------------
 
@@ -165,17 +169,23 @@ INSERT INTO `servico` (`id`, `nome`, `preco`) VALUES
 CREATE TABLE `venda` (
   `id` int(11) NOT NULL,
   `data` date DEFAULT NULL,
-  `cliente_id` int(11) NOT NULL
+  `cliente_id` int(11) NOT NULL,
+  `id_servico` int(11) DEFAULT NULL,
+  `item_id` int(11) DEFAULT NULL,
+  `quantidade` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `venda`
 --
 
-INSERT INTO `venda` (`id`, `data`, `cliente_id`) VALUES
-(82, '2020-10-22', 81),
-(83, '2020-10-22', 80),
-(84, '2020-10-22', 88);
+INSERT INTO `venda` (`id`, `data`, `cliente_id`, `id_servico`, `item_id`, `quantidade`) VALUES
+(189, '2020-11-12', 89, 1, NULL, 7),
+(190, '2020-11-15', 91, 2, 182, 2),
+(191, '2020-11-15', 92, 3, NULL, 1),
+(192, '2020-11-15', 90, 3, 184, 2),
+(193, '2020-11-18', 92, 1, 185, 2),
+(194, '2020-11-18', 92, 3, 186, 1);
 
 --
 -- Índices para tabelas despejadas
@@ -224,7 +234,8 @@ ALTER TABLE `servico`
 --
 ALTER TABLE `venda`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `cliente_id` (`cliente_id`);
+  ADD KEY `cliente_id` (`cliente_id`),
+  ADD KEY `item_id` (`item_id`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -234,31 +245,31 @@ ALTER TABLE `venda`
 -- AUTO_INCREMENT de tabela `abertura`
 --
 ALTER TABLE `abertura`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT de tabela `fechamento`
 --
 ALTER TABLE `fechamento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `itens_venda`
 --
 ALTER TABLE `itens_venda`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=187;
 
 --
 -- AUTO_INCREMENT de tabela `sangria`
 --
 ALTER TABLE `sangria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de tabela `servico`
@@ -270,7 +281,7 @@ ALTER TABLE `servico`
 -- AUTO_INCREMENT de tabela `venda`
 --
 ALTER TABLE `venda`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=195;
 
 --
 -- Restrições para despejos de tabelas
@@ -280,14 +291,15 @@ ALTER TABLE `venda`
 -- Limitadores para a tabela `itens_venda`
 --
 ALTER TABLE `itens_venda`
-  ADD CONSTRAINT `itens_venda_ibfk_1` FOREIGN KEY (`id_venda`) REFERENCES `venda` (`id`),
+  ADD CONSTRAINT `itens_venda_ibfk_1` FOREIGN KEY (`id_venda`) REFERENCES `venda` (`id`) ON DELETE SET NULL,
   ADD CONSTRAINT `itens_venda_ibfk_2` FOREIGN KEY (`id_servico`) REFERENCES `servico` (`id`);
 
 --
 -- Limitadores para a tabela `venda`
 --
 ALTER TABLE `venda`
-  ADD CONSTRAINT `venda_ibfk_1` FOREIGN KEY (`cliente_id`) REFERENCES `cliente` (`id`);
+  ADD CONSTRAINT `venda_ibfk_1` FOREIGN KEY (`cliente_id`) REFERENCES `cliente` (`id`),
+  ADD CONSTRAINT `venda_ibfk_2` FOREIGN KEY (`item_id`) REFERENCES `itens_venda` (`id`) ON DELETE SET NULL;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
