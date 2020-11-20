@@ -21,7 +21,7 @@
 
 <h5 class="text-right">
 		<a href="./cadastrar_sangria.php" class="btn btn-primary btn-xs"> Adicionar
-			<i class="fa fa-user-plus"></i>
+			<i class="fa fa-plus"></i>
 		</a>
 	</h5>
 <table class="table table-striped">

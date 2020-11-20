@@ -24,7 +24,7 @@ Lista Venda  <i class="fa fa-list"></i>
 
 <h5 class="text-right">
 		<a href="./cadastrar_venda2.php" class="btn btn-primary btn-xs"> Adicionar
-			<i class="fa fa-user-plus"></i>
+			<i class="fa fa-shopping-cart"></i>
 		</a>
 	</h5>
 <table class="table table-striped">
