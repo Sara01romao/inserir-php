@@ -92,7 +92,8 @@
 </form>
 
 
-<a href="lista_cliente.php">	<i class="fa fa-chevron-left"></i> Voltar</a>
+<a href="lista_cliente.php">	<i class="fa fa-chevron-left"></i> Voltar Para Lista</a>
+<a href="../index.php" style="float: right; margin-bottom: 20px;">	<i class="fa fa-chevron-left"></i> Voltar para Home</a>
 
 </div>
 

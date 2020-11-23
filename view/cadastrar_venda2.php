@@ -122,6 +122,7 @@ include '../conexao/conexao.php';
 
 
 <a href="lista_venda2.php">	<i class="fa fa-chevron-left"></i> Voltar</a>
+<a href="../index.php" style="float: right; margin-bottom: 20px;">	<i class="fa fa-chevron-left"></i> Voltar para Home</a>
 
 </div>
 

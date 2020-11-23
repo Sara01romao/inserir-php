@@ -52,7 +52,7 @@ Lista Venda  <i class="fa fa-list"></i>
                 $sql= "SELECT venda.id as vid, venda.data, cliente.nome as cliente, servico.nome as servico, venda.item_id as id , venda.quantidade, venda.quantidade * servico.preco as total
                 FROM `venda` 
                 INNER JOIN `cliente` on (venda.cliente_id=cliente.id)
-                INNER JOIN `servico` on (venda.id_servico= servico.id)";
+                INNER JOIN `servico` on (venda.id_servico= servico.id) ORDER BY id DESC";
 
 
                 $busca = mysqli_query($conexao, $sql);
