@@ -2,64 +2,67 @@
 <html lang="en">
 <head>
 <?php include_once 'view/dependencias.php'; ?>
-	<?php include_once 'view/menu.php'; ?>
+	
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
 </head>
 <body>
 
-<br>
-<div class="card" style="margin: 0px 50px;">
-  <div class="card-header">
-    Venda
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary" style="margin-right: 20px;" >Histrico de Vendas</a>
-    <a href="view/cadastrar_venda2.php" class="btn btn-primary">Cadastrar Venda</a>
-  </div>
-</div>
-<br>
+<header style="height:75px; background-color: #e6ffff; border-bottom:1px solid #e6f2ff; margin-bottom: 80px;" >
+<h1 style="font-size: 35px; padding: 10px 40px">Centro de Cópias <i class="fa fa-print" ></i></h1>
+  
+</header>
 
-<br>
-<div class="card" style="margin: 0px 50px;">
-  <div class="card-header">
-    Caixa
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary" style="margin-right: 20px;" >Histrico de Vendas</a>
-    <a href="view/cadastrar_venda2.php" class="btn btn-primary">Cadastrar Venda</a>
-  </div>
-</div>
-<br>
 
-<br>
-<div class="card" style="margin: 0px 50px;">
-  <div class="card-header">
-    Clientes
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary" style="margin-right: 20px;" >Histrico de Vendas</a>
-    <a href="view/cadastrar_venda2.php" class="btn btn-primary">Cadastrar Venda</a>
-  </div>
-</div>
-<br>
 
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card" style="margin: 0px 10px 20px 10px;" >
+      <div class="card-body" >
+        <h3 class="card-title" style="background:#f0f5f5; ">Venda</h3>
+        <br>
+      
+        <a href="view/lista_venda2.php" class="btn btn-primary" style="margin-right: 20px;" >Histórico de Vendas</a>
+        <a href="view/cadastrar_venda2.php" class="btn btn-primary">Cadastrar Venda</a>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <div class="col-sm-6" >
+    <div class="card" style="margin: 0px 10px 0px 10px;" >
+      <div class="card-body">
+        <h4 class="card-title" style="background:#f0f5f5; ">Cliente</h4>
+        <br>
+        <a href="view/lista_cliente.php" class="btn btn-primary" style="margin-right: 20px;">Lista de Clientes</a>
+        <a href="view/cadastrar_cliente.php" class="btn btn-primary">Cadastrar Cliente</a>
+      </div>
+    </div>
   </div>
 </div>
 
+
+<br>
+
+
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card text-center" style="margin: 0px 10px 20px 10px;" >
+      <div class="card-body" style="align-items: center;">
+        <h3 class="card-title" style="background:#f0f5f5; ">Caixa</h3>
+        <br>
+      
+        <a href="view/lista_abertura.php" class="btn btn-primary" style="margin: 0px  20px 20px 0px ;" > Abertura</a>
+        <a href="view/lista_sangria.php" class="btn btn-primary" style="margin: 0px  20px 20px 0px ;" >Sangria</a>
+        <a href="view/lista_fechamento.php" class="btn btn-primary" style="margin: 0px  20px 20px 0px;" >Fechamento</a>
+        
+        
+      </div>
+    </div>
+  </div>
 
 
 
